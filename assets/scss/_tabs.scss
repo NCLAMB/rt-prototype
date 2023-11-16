@@ -1,0 +1,77 @@
+.tabs {
+    margin: 15px 0;
+    border: 1px solid $primary-color;
+    background: $body-bg;
+    list-style-type: none;
+    border-radius: 0.625rem;
+    width:fit-content;
+    @media screen and (max-width: 768px) { 
+        display:flex;
+        flex-direction: column;
+        width:100%;
+    }
+    li {
+        @media screen and (max-width: 768px) { 
+            border-bottom: 1px solid $primary-color;
+            border-right:0;
+        }
+        &.tabs-title {
+            border-right: 1px solid $primary-color;
+            &:first-child {
+                a[aria-selected=true] {
+                    border-radius: 0.625rem 0 0 0.625rem;
+                    &:hover {
+                        border-radius: 0.625rem 0 0 0.625rem;
+                    }
+                    @media screen and (max-width: 768px) { 
+                        border-radius: 0.625rem 0.625rem 0 0;
+                    }
+                   
+                }
+                a:hover {
+                    border-radius: 0.625rem 0 0 0.625rem;
+                }
+            }
+            &:last-child {
+                border-right:0;
+                @media screen and (max-width: 768px) { 
+                    border-bottom: 0;
+                }
+                a[aria-selected=true] {
+                    border-radius: 0 0.625rem 0.625rem 0;
+                    &:hover {
+                        border-radius: 0 0.625rem 0.625rem 0;
+                    }
+                    @media screen and (max-width: 768px) { 
+                        border-radius: 0 0 0.625rem 0.625rem;
+                    }
+                }
+                a:hover {
+                    border-radius: 0 0.625rem 0.625rem 0;
+                }
+            }
+            > a {
+                padding:0.8rem 1.5rem;
+            }
+        }
+        }
+       
+}
+
+
+.tabs-title > a:focus, .tabs-title > a[aria-selected=true] {
+    background: $primary-color;
+    color: $white;
+   
+}
+
+
+
+
+.tabs-content {
+    border: 0;
+    border-top: 0;
+    background: $body-bg;
+    color: #0a0a0a;
+    transition: all 0.6s ease;
+}
